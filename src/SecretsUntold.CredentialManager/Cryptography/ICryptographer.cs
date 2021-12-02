@@ -8,12 +8,14 @@ namespace SecretsUntold.CredentialManager.Cryptography
 {
     public interface ICryptographer
     {
-        Task Encrypt(byte[] data);
+        byte[] IV { get; set; }
 
-        Task Encrypt(string data, Encoding encoding);
+        byte[] Encrypt(byte[] data);
 
-        Task<byte[]> Decrypt(byte[] encryptedData);
+        byte[] Encrypt(string data, Encoding encoding);
 
-        Task<string> ToString(byte[] encryptedData, Encoding encoding);
+        byte[] Decrypt(byte[] encryptedData);
+
+        string ToString(byte[] encryptedData, Encoding encoding);
     }
 }
