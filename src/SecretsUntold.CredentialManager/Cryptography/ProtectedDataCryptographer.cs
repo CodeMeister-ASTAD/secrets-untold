@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SecretsUntold.CredentialManager.Cryptography
 {
@@ -21,7 +18,7 @@ namespace SecretsUntold.CredentialManager.Cryptography
             {
                 return ProtectedData.Unprotect(encryptedData, IV, DataProtectionScope.LocalMachine);
             }
-            else throw new NotSupportedException("The DPAPI Is only available on Windows");
+            else throw new NotSupportedException("The DPAPI is only available on Windows");
         }
 
         public virtual byte[] Encrypt(byte[] data)
@@ -30,7 +27,7 @@ namespace SecretsUntold.CredentialManager.Cryptography
             {
                 return ProtectedData.Protect(data, IV, DataProtectionScope.LocalMachine);
             }
-            else throw new NotSupportedException("The DPAPI Is only available on Windows");
+            else throw new NotSupportedException("The DPAPI is only available on Windows");
         }
 
         public virtual byte[] Encrypt(string data, Encoding encoding)
