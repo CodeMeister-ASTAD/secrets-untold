@@ -15,7 +15,7 @@ namespace SecretsUntold.CredentialManager.Stores
 
         public RegistryStore(string storeName, string storeKey) { StoreName = storeName; StoreKey = storeKey; }
 
-        public byte[] FetchData(byte[] data, string keyName)
+        public byte[] FetchData(string keyName)
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {

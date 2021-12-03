@@ -14,6 +14,6 @@ namespace SecretsUntold.CredentialManager.Stores
 
         void StashData(byte[] data, string keyName);
 
-        byte[] FetchData(byte[] data, string keyName);
+        byte[] FetchData(string keyName);
     }
 }
